@@ -1,0 +1,47 @@
+.container-infos-carro{
+    display: flex;
+    margin: auto;;
+    width: 80%;
+    height: auto;
+    min-height: 80vh;
+    flex-direction: column;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden; 
+}
+th, td{
+    border: var(--azul-porto) 2px solid;
+    padding: 10px;
+    text-align: start;
+    overflow: hidden;
+}
+th{
+    background-color: var(--azul-porto);
+    color: white;
+}
+.btn-adiciona{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.container-select-veiculos{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 1%;
+    select{
+        width: 30%;
+        height: auto;
+        padding: 0.5%;
+        border: var(--azul-porto) 2px solid;
+        border-radius: 5px;
+    }
+    option{
+        background-color: white;
+        color: var(--azul-porto);
+    }
+}
+

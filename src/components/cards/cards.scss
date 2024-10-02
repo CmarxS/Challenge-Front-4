@@ -1,0 +1,56 @@
+.card {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+    border: #ccc solid 2px;
+
+    img {
+        padding: 10px;
+        width: 30%;
+        height: auto;
+    }
+
+    h6 {
+        font-size: 0.7rem;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 10px;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+.azul {
+    background-color: #09A1FC;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 4%;
+
+        img {
+            width: 15%;
+            height: auto;
+        }
+
+        h6 {
+            font-size: 0.8rem;
+        }
+    }
+}

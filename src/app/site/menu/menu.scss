@@ -1,0 +1,8 @@
+.container-cards-menu{
+    min-height: 100vh;
+}
+@media (max-width: 380px) {
+    .container-cards-menu{
+        min-height: 125vh;
+    }
+}

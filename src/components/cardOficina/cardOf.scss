@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.card-of{
+    border: #ccc 2px solid;
+    border-right: #ccc 5px solid;
+    border-bottom: #ccc 5px solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 1%;
+    display: none;
+    &:hover{
+        border: var(--azul-porto) 2px solid;
+        border-right: var(--azul-porto) 5px solid;
+        border-bottom: var(--azul-porto) 5px solid;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 1%;
+        background-color: #f0f0f0;
+        transform: scale(1.05);
+        transition: all 0.5s;
+    }
+}
+.habilitado{
+    display: block;
+} 

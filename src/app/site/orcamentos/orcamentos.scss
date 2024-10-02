@@ -1,0 +1,91 @@
+@mixin linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1%;
+}
+@mixin coluna{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1%;
+}
+@mixin borda{
+    border: var(--azul-porto) 1px solid;
+    border-radius: 5px;
+}
+.container-orcamentos{
+    @include coluna;
+    width: 100%;
+    min-height: 80vh;
+    justify-content: flex-start;
+}
+.container-input-orcamento{
+    @include linha;
+    input{
+        width:50%;
+        padding: 7px;
+        padding-left: 18px;
+        @include borda;
+        margin: 0;
+        background-color: #e9e9e9;
+        &::placeholder{
+            color: #808080;
+            font-style: italic;
+        }
+        &:focus{
+            outline: none;
+            border: var(--azul-porto) 2px solid;
+            background-color: white;
+        }
+    }
+    button{
+        width: 15%;
+        font-size: 100%;
+        height: 45px;
+    }
+}
+.resultado-orcamento{
+    @include linha;
+    @include borda;
+    width: 80%;
+    margin: auto;
+    margin-top: 1%;
+    height: auto;
+    padding: 20px;
+    display: none;
+    &:hover{
+        border-bottom: var(--azul-porto) 5px solid;
+        border-right: var(--azul-porto) 5px solid;
+        border-radius: 8px;
+    }
+    span{
+        color: var(--azul-porto);
+    }
+    .link-orcamento{
+        color: var(--azul-porto);
+        text-decoration: underline;
+        font-weight: 600;
+        font-style: italic;
+    }
+    &.show{
+        display: flex;
+    }
+}
+@media (max-width: 768px){
+    .container-input-orcamento{
+        justify-content: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        input{
+            width: 70%;
+        }
+        button{
+            width: 20%;
+        }
+    }
+    .resultado-orcamento{
+        width: 80%;
+    }
+    
+}
