@@ -1,13 +1,13 @@
-import './footer.scss';
-import Casa from '../../images/casa.png'
-import Mapa from '../../images/mapa.png'
-import Menu from '../../images/menu.png'
-import Chatbot from '../../images/chatbot-black.png'
 import Link from 'next/link';
+import Casa from '../../images/casa.png';
+import Chatbot from '../../images/chatbot-black.png';
+import Mapa from '../../images/mapa.png';
+import Menu from '../../images/menu.png';
+import './footer.scss';
 const footer = () => {
     return (
         <footer>
-            <Link href='/integrantes'><h6>Página dos integrantes</h6></Link>
+            <Link href='/site/integrantes'><h6>Página dos integrantes</h6></Link>
             <hr />
             <div className="footer-icons">
                 <Link href='/site/inicial'><img src={Casa.src} alt="" /></Link>

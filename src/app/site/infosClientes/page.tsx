@@ -1,7 +1,7 @@
 "use client"
 
-import './infosCliente.scss';
 import { useState } from "react";
+import './infosCliente.scss';
 
 const InfosClientes = () => {
 
@@ -18,7 +18,6 @@ const InfosClientes = () => {
                     <h3>Dados pessoais</h3>
                     <div className="linha-dados">
                         <input className='infos' type="text" name="text" placeholder="Nome" disabled={ChangeAble} />
-                        <label htmlFor="data">Data de Nascimento</label>
                         <input className='infos' type="date" name="data" id="data" title="Data de Nascimento" disabled={ChangeAble} />
                     </div>
                     <div className="linha-dados">

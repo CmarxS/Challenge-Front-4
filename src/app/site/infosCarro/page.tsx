@@ -1,8 +1,8 @@
 "use client"
 
-import './infosCarro.scss';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
+import './infosCarro.scss';
 
 const InfosCarros = () => {
     const [carroSelecionado, setCarroSelecionado] = useState({
@@ -43,7 +43,7 @@ const InfosCarros = () => {
             <h1>Meus veículos</h1>
             <main className="container-infos-carro">
                 <div className="container-select-veiculos">
-                    <label htmlFor="carros">Selecione um veículo:</label>
+                    <label htmlFor="carros"></label>
                     <select name="carros" id="carros" onChange={handleCarroChange}>
                         <option value="">Selecione um veículo</option>
                         <option value="veiculo1">HB20</option>
