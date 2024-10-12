@@ -16,7 +16,7 @@ const Cadastro = () => {
                 <Input type="password" name="password" placeholder="Digite sua senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                 <Input type="password" name="password" placeholder="Confirme sua senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                 <h4>A senha deve conter:</h4>
-                <ul className="requisitos-senha">
+                <ul className="requisitos">
                     <li>No mínimo 8 caracteres</li>
                     <li>No mínimo 1 letra maiúscula</li>
                     <li>No mínimo 1 letra minúscula</li>

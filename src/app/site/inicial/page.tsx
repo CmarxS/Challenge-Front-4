@@ -1,8 +1,8 @@
 import CHP from "../../../components/containerHomePage/chp";
 const Inicial = () => {
     return (
-        <div>
-            <h1>Como podemos ajudar?</h1>
+        <div className="w-full flex items-center flex-col">
+            <h1 className="mr-auto">Como podemos ajudar?</h1>
             <CHP />
         </div>
     )

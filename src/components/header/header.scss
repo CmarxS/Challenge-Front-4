@@ -22,6 +22,7 @@ header {
         button {
             background-color: white;
             color: #09A1FC;
+            font-size: 1rem;
         }
 
         .logo-soluciona {
@@ -34,10 +35,12 @@ header {
             align-items: center;
             color: white;
             font-weight: 600;
+            gap: 1rem;
 
             img {
                 width: 15%;
                 height: auto;
+                border-radius: 100%;
             }
         }
     }

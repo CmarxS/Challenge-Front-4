@@ -1,15 +1,37 @@
-.btn-login {
+.pre{
+    background-color: #09A1FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    img{
+        width: 400px;
+        height: auto;
+        margin-bottom: 20px;
+    }	
+}	
+.btn-login{
+    width: 180px;
+    background-color: #09A1FC;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: white 2px solid;
     cursor: pointer;
     transition: all 0.3s;
-
-    &:hover {
+    &:hover{
         background-color: white;
         color: #09A1FC;
         border: #09A1FC 2px solid;
     }
-}
+}	
 
-.btn-cadastro {
+.btn-cadastro{
     width: 180px;
     background-color: white;
     color: #09A1FC;
@@ -22,8 +44,7 @@
     border: #09A1FC 2px solid;
     cursor: pointer;
     transition: all 0.3s;
-
-    &:hover {
+    &:hover{
         background-color: #09A1FC;
         color: white;
         border: white 2px solid;
