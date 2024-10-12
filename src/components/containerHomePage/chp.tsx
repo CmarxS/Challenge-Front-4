@@ -4,8 +4,8 @@ import Cards from "../cards/cards";
 import Clientes from "../../images/Cliente.png";
 import Relatorio from "../../images/Relatorio.png";
 import Orcamentos from "../../images/Orçamentos.png";
-import ChatBot from "../../images/ChatBot.png";
-import Carro from "../../images/Carro.png";
+import ChatBot from "../../images/chatbot.png"
+import Carro from "../../images/carro.png";
 import Oficinas from "../../images/Oficinas.png";
 import './chp.scss';
 import Porto from "../../images/Porto-Seguro.jpg";

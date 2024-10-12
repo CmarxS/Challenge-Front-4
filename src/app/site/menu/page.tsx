@@ -5,8 +5,8 @@ import Clientes from "../../../images/Cliente.png";
 import Orcamentos from "../../../images/Orçamentos.png";
 import Carro from "../../../images/carro.png";
 import ChatBot from "../../../images/chatbot.png";
-import Oficinas from "../../../images/oficinas.png";
-import Relatorio from "../../../images/relatorio.png";
+import Oficinas from "../../../images/Oficinas.png";
+import Relatorio from "../../../images/Relatorio.png"
 import "./menu.scss";
 const Menu = () => {
 
