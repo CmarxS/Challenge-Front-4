@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 import './formulario.scss';
 
-interface FormularioProps extends PropsWithChildren<{}> {
+interface FormularioProps extends PropsWithChildren {
     h2: string;
     h4: string;
     h5: string;

@@ -7,7 +7,7 @@ const InfosClientes = () => {
 
     const [ChangeAble, setChangeAble] = useState<boolean>(true);
 
-    let ButtonText = ChangeAble ? 'Alterar Informações' : 'Salvar Informações';
+    const ButtonText = ChangeAble ? 'Alterar Informações' : 'Salvar Informações';
 
 
     return (

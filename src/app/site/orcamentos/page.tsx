@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 const Orcamentos = () => {
 
-    const[orcamento, setOrcamento] = useState<Boolean>(false);
+    const[orcamento, setOrcamento] = useState<boolean>(false);
     const [inputValue, setInputValue] = useState<string>('');
 
     const gerarOrcamento = () => {

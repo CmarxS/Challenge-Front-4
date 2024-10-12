@@ -1,5 +1,5 @@
+import Input from "@/components/input/input";
 import Formulario from "../../../components/formulario/formulario";
-import Input from "../../../components/input/input";
 import './cadastro.scss';
 
 const Cadastro = () => {

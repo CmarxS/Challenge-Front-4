@@ -2,6 +2,7 @@
 import "./oficinasProximas.scss";
 import CardOf from "../../../components/cardOficina/cardOf";
 import { useState } from "react";
+import Input from "@/components/input/input";
 
 const Oficinas = () => {
     const [habilitado, setHabilitado] = useState<string>('');
@@ -17,10 +18,6 @@ const Oficinas = () => {
                 setHabilitado('habilitado');
             }
         }
-    };
-
-    const shuffleArray = (array: any[]) => {
-        return array.sort(() => Math.random() - 0.5);
     };
 
     const oficinas = [
@@ -50,16 +47,14 @@ const Oficinas = () => {
         }
     ];
 
-    const shuffledOficinas = shuffleArray(oficinas);
-
     return (
         <>
             <h1>Oficinas próximas</h1>
             <main className="container-oficinas">
-                <input type="text" name="localizacao" id="localizacao" placeholder="Digite o seu CEP atual" />
+                <Input type="text" name="localizacao" placeholder="Digite o seu CEP atual" pattern="\d{5}-\d{3}|\d{8}"/>
                 <button onClick={habilitarCards}>Procurar</button>
                 <div className="container-resultado-oficinas">
-                    {shuffledOficinas.map((oficina, index) => (
+                    {oficinas.map((oficina, index) => (
                         <CardOf
                             key={index}
                             nome={oficina.nome}
@@ -71,7 +66,7 @@ const Oficinas = () => {
                 </div>
             </main>
             <main className="mapa-oficinas">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8423555441677!2d-46.62580232550979!3d-23.57410467879111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce597abf1a28ff%3A0x1b02a58f85e6395e!2zRklBUCAtIEFjbGltYcOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1725913867819!5m2!1spt-BR!2sbr" title="Google Maps"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8423555441677!2d-46.62580232550979!3d-23.57410467879111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce597abf1a28ff%3A0x1b02a58f85e6395e!2zRklBUCAtIEFjbGltYcOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1725913867819!5m2!1spt-BR!2sbr" title="Google Maps"></iframe>
             </main>
         </>
     );
