@@ -3,6 +3,7 @@ import "./oficinasProximas.scss";
 import CardOf from "../../../components/cardOficina/cardOf";
 import { useState } from "react";
 import Input from "@/components/input/input";
+import { Oficina } from "@/app/types/oficina";
 
 const Oficinas = () => {
     const [habilitado, setHabilitado] = useState<string>('');
@@ -20,7 +21,7 @@ const Oficinas = () => {
         }
     };
 
-    const oficinas = [
+    const oficinas: Oficina[] = [
         {
             nome: "La Macchina Serviços Automotivos: ",
             localizacao: " Localizada na Rua Cel. Diogo, 897, em São Paulo, a La Macchina oferece serviços de mecânica geral, troca de fluidos, auto elétrica, funilaria e pintura. Você pode entrar em contato pelo telefone (11) 2215-4773.",
@@ -43,7 +44,8 @@ const Oficinas = () => {
         },
         {
             nome: "HIDROMEC SERVICE: ",
-            localizacao: " Localizada na Vila Invernada, em São Paulo, a HIDROMEC SERVICE oferece serviços de mecânica geral. Entre em contato pelo telefone (11) 94014-6397"
+            localizacao: " Localizada na Vila Invernada, em São Paulo, a HIDROMEC SERVICE oferece serviços de mecânica geral. Entre em contato pelo telefone (11) 94014-6397",
+            maps: "https://www.google.com.br/maps/place/Hidromec+service/@-23.5660156,-46.5677158,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5c25b6c3509d:0xd96a5cb213bf01fd!8m2!3d-23.5660156!4d-46.5651409!16s%2Fg%2F11crzjtxdn?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D"
         }
     ];
 
