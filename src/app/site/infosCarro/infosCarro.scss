@@ -30,17 +30,23 @@ th{
 }
 .container-select-veiculos{
     display: flex;
-    flex-direction: row-reverse;
     margin-bottom: 1%;
+    justify-content: center;
+    gap: 1%;
+    input{
+        width: 30%;
+        height: auto;
+        padding: 1%;
+        border: var(--azul-porto) 2px solid;
+        border-radius: 5px;
+    }
 }
-.container-select-veiculos select{
-    width: 30%;
-    height: auto;
-    padding: 0.5%;
-    border: var(--azul-porto) 2px solid;
-    border-radius: 5px;
-}
-.container-select-veiculos option{
-    background-color: white;
-    color: var(--azul-porto);
+
+@media (max-width: 768px) {
+    .container-select-veiculos{
+        input{
+            width: 100%;
+        }
+    }
+    
 }

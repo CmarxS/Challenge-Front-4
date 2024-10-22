@@ -3,7 +3,7 @@ import "./oficinasProximas.scss";
 import CardOf from "../../../components/cardOficina/cardOf";
 import { useState } from "react";
 import Input from "@/components/input/input";
-import { Oficina } from "@/app/types/oficina";
+import { Oficina } from "@/app/types/types";
 
 const Oficinas = () => {
     const [habilitado, setHabilitado] = useState<string>('');
