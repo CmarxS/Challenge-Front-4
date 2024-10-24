@@ -2,49 +2,138 @@
 
 import { useState } from "react";
 import './infosCliente.scss';
+import Input from "@/components/input/input";
+
+type Cliente = {
+    nome: string;
+    email: string;
+    cpf: string;
+    telefone: string;
+    endereco: string;
+    senha: string;
+};
+
+const defaultClienteData: Cliente = {
+    nome: '',
+    email: '',
+    cpf: '',
+    telefone: '',
+    endereco: '',
+    senha: ''
+};
+
+const fetchClienteData = async (idCliente: number) => {
+    try {
+        const url = `http://localhost:3001/clientes/${idCliente}`;
+        console.log(`Fetching data from URL: ${url}`);
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar dados do cliente: ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log('Data fetched:', data);
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        return null;
+    }
+};
 
 const InfosClientes = () => {
+    const [clienteData, setClienteData] = useState<Cliente>(defaultClienteData);
+    const [idCliente, setIdCliente] = useState<number | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const [ChangeAble, setChangeAble] = useState<boolean>(true);
+    const handleFetchCliente = async () => {
+        if (idCliente !== null) {
+            console.log(`Fetching client with ID: ${idCliente}`);
+            const data = await fetchClienteData(idCliente);
+            if (data) {
+                setClienteData(data);
+                setErrorMessage(null);
+            } else {
+                setErrorMessage('Usuário não encontrado');
+                setClienteData(defaultClienteData);
+            }
+        }
+    };
 
-    const ButtonText = ChangeAble ? 'Alterar Informações' : 'Salvar Informações';
-
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setClienteData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
     return (
         <>
             <h1>Informações pessoais</h1>
             <main className="container-infos-cliente">
+                <div className="infos-cliente-input">
+                    <Input 
+                        type="number" 
+                        placeholder="Digite o seu Id" 
+                        name="idCliente" 
+                        onChange={(e) => setIdCliente(Number(e.target.value))} 
+                    />
+                    <button type='button' onClick={handleFetchCliente}>Buscar cliente</button>
+                </div>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <div className="container-dados">
                     <h3>Dados pessoais</h3>
                     <div className="linha-dados">
-                        <input className='infos' type="text" name="text" placeholder="Nome" disabled={ChangeAble} />
-                        <input className='infos' type="date" name="data" id="data" title="Data de Nascimento" disabled={ChangeAble} />
+                        <input 
+                            className='infos' 
+                            type="text" 
+                            name="nome" 
+                            placeholder="Nome" 
+                            value={clienteData.nome} 
+                            onChange={handleInputChange} 
+                            disabled={false} 
+                        />
                     </div>
                     <div className="linha-dados">
-                        <input className='infos' type="email" name="email" placeholder="Email" disabled={ChangeAble} />
+                        <input 
+                            className='infos' 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email" 
+                            value={clienteData.email} 
+                            onChange={handleInputChange} 
+                            disabled={false} 
+                        />
                     </div>
                     <div className="linha-dados">
-                        <input className='infos' type="text" name="CPF" placeholder="CPF" disabled={ChangeAble} />
-                        <input className='infos' type="tel" name="telefone" placeholder="Telefone" disabled={ChangeAble} />
+                        <input 
+                            className='infos' 
+                            type="text" 
+                            name="cpf" 
+                            placeholder="CPF" 
+                            value={clienteData.cpf} 
+                            onChange={handleInputChange} 
+                            disabled={false} 
+                        />
+                        <input 
+                            className='infos' 
+                            type="tel" 
+                            name="telefone" 
+                            placeholder="Telefone" 
+                            value={clienteData.telefone} 
+                            onChange={handleInputChange} 
+                            disabled={false} 
+                        />
                     </div>
-                </div>
-                <div className="container-endereco">
-                    <h3>Endereço</h3>
                     <div className="linha-dados">
-                        <input className='infos' type="text" name="CEP" placeholder="Cep" disabled={ChangeAble} />
-                        <input className='infos' type="text" name="rua" placeholder="Rua" disabled={ChangeAble} />
-                        <input className='infos' type="number" name="numero" placeholder="Número" disabled={ChangeAble} />
-                    </div>
-                    <div className="linha-dados">
-                        <input className='infos' type="text" name="complemento" placeholder="Complemento" disabled={ChangeAble} />
-                    </div>
-                    <div className="linha-dados">
-                        <input className='infos' type="text" name="bairro" placeholder="Bairro" disabled={ChangeAble} />
-                        <input className='infos' type="text" name="cidade" placeholder="Cidade" disabled={ChangeAble} />
-                        <input className='infos' type="text" name="estado" placeholder="Estado" disabled={ChangeAble} />
-                    </div>
-                    <div className="container-button">
-                        <button onClick={() => setChangeAble(!ChangeAble)}>{ButtonText}</button>
+                        <input 
+                            className='infos' 
+                            type="text" 
+                            name="endereco" 
+                            placeholder="Endereço" 
+                            value={clienteData.endereco} 
+                            onChange={handleInputChange} 
+                            disabled={false} 
+                        />
                     </div>
                 </div>
             </main>

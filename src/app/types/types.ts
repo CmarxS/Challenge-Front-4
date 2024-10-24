@@ -9,22 +9,23 @@ export type CarrosInfo = {
     marca: string;
     modelo: string;
     ano: string;
+    idCliente: number;
 }
 
-export type Usuario = {
+export type Cliente = {
+    idCliente?: number;
     nome: string;
     email: string;
-    CPF: string;
-    data: string;
+    cpf: string;
     telefone: string;
-    CEP: string;
+    endereco: string;
     senha: string;
 }
 
 export type CentroAutomotivo = {
     nome: string;
     email: string;
-    CNPJ: string;
+    cnpj: string;
     telefone: string;
-    CEP: string;
+    endereco: string;
 }

@@ -11,7 +11,8 @@ const CadastroVeiculo = () => {
         placa: "",
         modelo: "",
         marca: "",
-        ano: ""
+        ano: "",
+        idCliente: 0
     });
 
     const navigation = useRouter();
@@ -41,7 +42,8 @@ const CadastroVeiculo = () => {
                     placa: "",
                     modelo: "",
                     marca: "",
-                    ano: ""
+                    ano: "",
+                    idCliente: 0
                 });
                 navigation.push('/site/inicial');
             }
@@ -69,6 +71,7 @@ const CadastroVeiculo = () => {
                 <Input type="text" name="modelo" placeholder="Digite o modelo do seu carro" onChange={(evento) => handleChange(evento)} value={carro.modelo} />
                 <Input type="text" name="marca" placeholder="Digite a marca do seu carro" onChange={(evento) => handleChange(evento)} value={carro.marca} />
                 <Input type="text" name="ano" placeholder="Digite o ano do seu carro" pattern="\d{4}" onChange={(evento) => handleChange(evento)} value={carro.ano} />
+                <Input type="number" name="idCliente" placeholder="Digite o id do cliente proprietário" onChange={(evento) => handleChange(evento)} value={carro.idCliente} />
             </Formulario>
         </div>
     )

@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
     margin: auto;
-    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 60%;
     height: auto;
-    min-height: 80vh;
+    min-height: 70vh;
     border: var(--azul-porto) 4px solid;
     border-radius: 3%;
     position: relative;
@@ -15,7 +18,27 @@
         font-style: italic;
     }
 }
-.container-dados-pessoais .container-endereco{
+.error-message{
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+.infos-cliente-input{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    input{
+        width: 20%;
+        height: 50px;
+        border: var(--azul-porto) 2px solid;
+        border-radius: 10px;
+        align-self: center;
+    }
+}
+.container-dados-pessoais {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +78,7 @@
         margin-bottom: 100px;
         border: none;
     }
-    .container-dados-pessoais .container-endereco{
+    .container-dados-pessoais{
         display: flex;
         flex-direction: column;
         align-items: center;

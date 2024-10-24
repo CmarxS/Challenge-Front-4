@@ -11,35 +11,37 @@ const InfosCarros = () => {
         marca: '',
         modelo: '',
         ano: '',
+        idCliente: 0
     });
-    const handleCarroChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const valor = event.target.value;
-        let infoCarro;
 
-        switch (valor) {
-            case 'veiculo1':
-                infoCarro = { placa: 'ABC-1234', marca: 'Hyundai', modelo: 'HB20', ano: '2020'};
-                break;
-            case 'veiculo2':
-                infoCarro = { placa: 'DEF-5678', marca: 'Jeep', modelo: 'Compass', ano: '2021'};
-                break;
-            case 'veiculo3':
-                infoCarro = { placa: 'GHI-9012', marca: 'Renault', modelo: 'Sandero', ano: '2016'};
-                break;
-            default:
-                infoCarro = { placa: '', marca: '', modelo: '', ano: ''};
-        }
+    // const handleCarroChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    //     const valor = event.target.value;
+    //     let infoCarro;
 
-        setCarroSelecionado(infoCarro);
-    };
+    //     switch (valor) {
+    //         case 'veiculo1':
+    //             infoCarro = { placa: 'ABC-1234', marca: 'Hyundai', modelo: 'HB20', ano: '2020', idCliente: 1 };
+    //             break;
+    //         case 'veiculo2':
+    //             infoCarro = { placa: 'DEF-5678', marca: 'Jeep', modelo: 'Compass', ano: '2021', idCliente: 2 };
+    //             break;
+    //         case 'veiculo3':
+    //             infoCarro = { placa: 'GHI-9012', marca: 'Renault', modelo: 'Sandero', ano: '2016', idCliente: 3 };
+    //             break;
+    //         default:
+    //             infoCarro = { placa: '', marca: '', modelo: '', ano: '', idCliente: 0 };
+    //     }
+
+    //     setCarroSelecionado(infoCarro);
+    // };
 
     return (
         <>
             <h1>Meus veículos</h1>
             <main className="container-infos-carro">
                 <div className="container-select-veiculos">
-                    <Input type="text" placeholder="Digite a placa do seu veículo" name="placa" /> 
-                    <button>Buscar veículo</button>
+                    <Input type="text" placeholder="Digite a placa do seu veículo" name="placa" />
+                    <button type='submit'>Buscar veículo</button>
                 </div>
                 <table>
                     <thead>
@@ -49,6 +51,10 @@ const InfosCarros = () => {
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Id do proprietário</td>
+                            <td>{carroSelecionado.idCliente}</td>
+                        </tr>
                         <tr>
                             <td>Placa</td>
                             <td>{carroSelecionado.placa}</td>
