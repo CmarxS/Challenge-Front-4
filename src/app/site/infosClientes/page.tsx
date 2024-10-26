@@ -3,15 +3,7 @@
 import { useState } from "react";
 import './infosCliente.scss';
 import Input from "@/components/input/input";
-
-type Cliente = {
-    nome: string;
-    email: string;
-    cpf: string;
-    telefone: string;
-    endereco: string;
-    senha: string;
-};
+import { Cliente } from "@/app/types/types";
 
 const defaultClienteData: Cliente = {
     nome: '',
@@ -39,6 +31,47 @@ const fetchClienteData = async (idCliente: number) => {
     }
 };
 
+const deleteClienteData = async (idCliente: number) => {
+    try {
+        const url = `http://localhost:3001/clientes/${idCliente}`;
+        console.log(`Deleting data from URL: ${url}`);
+        const response = await fetch(url, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error(`Erro ao deletar dados do cliente: ${response.statusText}`);
+        }
+        console.log('Cliente deletado com sucesso');
+        return true;
+    } catch (error) {
+        console.error('Delete error:', error);
+        return false;
+    }
+};
+
+const updateClienteData = async (idCliente: number, clienteData: Cliente) => {
+    try {
+        const url = `http://localhost:3001/clientes/${idCliente}`;
+        console.log(`Updating data at URL: ${url}`);
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(clienteData),
+        });
+        if (!response.ok) {
+            throw new Error(`Erro ao atualizar dados do cliente: ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log('Cliente atualizado com sucesso:', data);
+        return data;
+    } catch (error) {
+        console.error('Update error:', error);
+        return null;
+    }
+};
+
 const InfosClientes = () => {
     const [clienteData, setClienteData] = useState<Cliente>(defaultClienteData);
     const [idCliente, setIdCliente] = useState<number | null>(null);
@@ -54,6 +87,32 @@ const InfosClientes = () => {
             } else {
                 setErrorMessage('Usuário não encontrado');
                 setClienteData(defaultClienteData);
+            }
+        }
+    };
+
+    const handleDeleteCliente = async () => {
+        if (idCliente !== null) {
+            console.log(`Deleting client with ID: ${idCliente}`);
+            const success = await deleteClienteData(idCliente);
+            if (success) {
+                setClienteData(defaultClienteData);
+                setErrorMessage('Cliente deletado com sucesso');
+            } else {
+                setErrorMessage('Erro ao deletar cliente');
+            }
+        }
+    };
+
+    const handleUpdateCliente = async () => {
+        if (idCliente !== null) {
+            console.log(`Updating client with ID: ${idCliente}`);
+            const data = await updateClienteData(idCliente, clienteData);
+            if (data) {
+                setClienteData(data);
+                setErrorMessage('Cliente atualizado com sucesso');
+            } else {
+                setErrorMessage('Erro ao atualizar cliente');
             }
         }
     };
@@ -78,6 +137,8 @@ const InfosClientes = () => {
                         onChange={(e) => setIdCliente(Number(e.target.value))} 
                     />
                     <button type='button' onClick={handleFetchCliente}>Buscar cliente</button>
+                    <button type='button' onClick={handleUpdateCliente} className="button-update">Atualizar cliente</button>
+                    <button type='button' onClick={handleDeleteCliente} className="button-delete">Deletar cliente</button>
                 </div>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <div className="container-dados">

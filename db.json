@@ -1,24 +1,6 @@
 {
   "clientes": [
     {
-      "id": "1",
-      "nome": "João Silva",
-      "email": "joao.silva@example.com",
-      "cpf": "123.456.789-00",
-      "telefone": "(11) 91234-5678",
-      "endereco": "Rua Exemplo, 123, São Paulo, SP",
-      "senha": "Senha123"
-    },
-    {
-      "id": "2",
-      "nome": "Caio Marques",
-      "email": "caiomarques.cmxs@gmail.com",
-      "cpf": "535.497.828-96",
-      "telefone": "(11) 94374-0709",
-      "endereco": "Av. Doutor Eduardo Cotching, 694",
-      "senha": "Caio123456"
-    },
-    {
       "id": "3",
       "nome": "Maria Oliveira",
       "email": "maria.oliveira@example.com",
@@ -35,6 +17,32 @@
       "telefone": "11943740709",
       "endereco": "Av. Doutor Eduardo Cotching, 694",
       "senha": "cacwccawwA12"
+    }
+  ],
+  "veiculos": [
+    {
+      "idVeiculo": "2",
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "ano": "2020",
+      "placa": "DEF-5678",
+      "cor": "Branco"
+    },
+    {
+      "idVeiculo": "3",
+      "marca": "Fiat",
+      "modelo": "Uno",
+      "ano": "2018",
+      "placa": "GHI-9012",
+      "cor": "Vermelho"
+    },
+    {
+      "id": "874f",
+      "placa": "ABC-1234",
+      "modelo": "Classe C",
+      "marca": "Mercedes",
+      "ano": "2024",
+      "idCliente": "2"
     }
   ]
 }

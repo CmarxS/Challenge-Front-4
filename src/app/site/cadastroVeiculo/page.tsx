@@ -1,9 +1,9 @@
 'use client'
+import { CarrosInfo } from "@/app/types/types";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Formulario from "../../../components/formulario/formulario";
 import Input from "../../../components/input/input";
-import { CarrosInfo } from "@/app/types/types";
-import { useRouter } from "next/navigation";
 
 const CadastroVeiculo = () => {
 
@@ -28,7 +28,7 @@ const CadastroVeiculo = () => {
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
         try {
-            const response = await fetch('api que virá de java', {
+            const response = await fetch('http://localhost:3001/veiculos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,7 +71,8 @@ const CadastroVeiculo = () => {
                 <Input type="text" name="modelo" placeholder="Digite o modelo do seu carro" onChange={(evento) => handleChange(evento)} value={carro.modelo} />
                 <Input type="text" name="marca" placeholder="Digite a marca do seu carro" onChange={(evento) => handleChange(evento)} value={carro.marca} />
                 <Input type="text" name="ano" placeholder="Digite o ano do seu carro" pattern="\d{4}" onChange={(evento) => handleChange(evento)} value={carro.ano} />
-                <Input type="number" name="idCliente" placeholder="Digite o id do cliente proprietário" onChange={(evento) => handleChange(evento)} value={carro.idCliente} />
+                <Input type="text" name="idCliente" placeholder="Digite o id do cliente proprietário" onChange={(evento) => handleChange(evento)} value={carro.idCliente} />
+                <label htmlFor="idCliente">Digite o id do cliente proprietário</label>
             </Formulario>
         </div>
     )

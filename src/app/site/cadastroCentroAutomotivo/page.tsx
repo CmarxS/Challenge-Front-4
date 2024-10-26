@@ -38,7 +38,7 @@ const CadastroCA = () => {
             });
 
             if (response.ok) {
-                alert('Centro Automotivo cadastrado com sucesso!');
+                alert('Centro Automotivo cadastrado com sucesso! Enviaremos um email com um formulário para nos ajudar com dados para nossa IA. :)');
                 setCentroAutomotivo({
                     nome: "",
                     email: "",

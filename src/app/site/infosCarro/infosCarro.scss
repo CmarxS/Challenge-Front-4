@@ -1,10 +1,11 @@
 .container-infos-carro{
     display: flex;
     margin: auto;;
-    width: 80%;
+    width: 100%;
     height: auto;
     min-height: 80vh;
     flex-direction: column;
+    align-items: center;
 }
 table {
     width: 100%;
@@ -21,32 +22,47 @@ th{
     background-color: var(--azul-porto);
     color: white;
 }
-.btn-adiciona{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+.btn-delete{
+    background-color: red;
+    border: red 2px solid;
 }
-.container-select-veiculos{
+.btn-adiciona, .btn-delete, .btn-update, .btn-cadastra{
     display: flex;
-    margin-bottom: 1%;
     justify-content: center;
+}
+.infos-carro-input{
+    display: flex;
+    justify-content: center;
+    width: 100%;
     gap: 1%;
     input{
-        width: 30%;
-        height: auto;
-        padding: 1%;
-        border: var(--azul-porto) 2px solid;
-        border-radius: 5px;
+        height: 50px;
+        width: 40%;
+    }
+    button{
+        height: 50px;
+        margin: 7px;
     }
 }
-
+.container-dados{
+    border: var(--azul-porto) 2px solid;
+    padding: 50px;
+    margin: 2%;
+    border-radius: 10px;
+}
+.buttons{   
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    width: 50%;
+    margin-top: 2%;
+}
 @media (max-width: 768px) {
-    .container-select-veiculos{
-        input{
-            width: 100%;
-        }
+    .infos-carro-input{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        gap: 1%;
     }
     
 }

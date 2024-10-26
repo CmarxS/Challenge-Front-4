@@ -5,11 +5,12 @@ export type Oficina = {
 }
 
 export type CarrosInfo = {
+    idVeiculo?: number;
     placa: string;
     marca: string;
     modelo: string;
     ano: string;
-    idCliente: number;
+    idCliente: number | string; 
 }
 
 export type Cliente = {
