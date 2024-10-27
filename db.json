@@ -44,5 +44,15 @@
       "ano": "2024",
       "idCliente": "2"
     }
+  ],
+  "oficinas": [
+    {
+      "id": "3",
+      "nome": "Oficina do jão",
+      "email": "ofjao@gmail.com",
+      "cnpj": "45.889.240/0001-27",
+      "telefone": "11943740709",
+      "endereco": "Av. Doutor Eduardo Cotching, 694"
+    }
   ]
 }

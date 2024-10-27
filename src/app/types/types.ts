@@ -24,6 +24,7 @@ export type Cliente = {
 }
 
 export type CentroAutomotivo = {
+    idOficina?: number;
     nome: string;
     email: string;
     cnpj: string;

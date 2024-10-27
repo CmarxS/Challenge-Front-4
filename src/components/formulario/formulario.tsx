@@ -15,16 +15,21 @@ interface FormularioProps extends PropsWithChildren {
     onSubmit?: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
 }
 
-const handleSubmitBase = async (event: React.FormEvent): Promise<void> => {
-    event.preventDefault();
+const Formulario = ({ h2, h4, h5, link, botao, enderecoLink, children, onSubmit }: FormularioProps) => {
     const router = useRouter();
-    router.push('/site/inicial');
-};
 
-const Formulario = ({ h2, h4, h5, link, botao, enderecoLink, children, onSubmit = handleSubmitBase }: FormularioProps) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        event.preventDefault();
+        if (onSubmit) {
+            await onSubmit(event);
+        } else {
+            router.push('/site/inicial');
+        }
+    };
+
     return (
         <div className="container-formulario">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit}>
                 <h2>{h2}</h2>
                 <h4>{h4}</h4>
                 {children}
