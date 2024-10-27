@@ -5,7 +5,7 @@ export type Oficina = {
 }
 
 export type CarrosInfo = {
-    idVeiculo?: number;
+    id?: number;
     placa: string;
     marca: string;
     modelo: string;
@@ -14,7 +14,7 @@ export type CarrosInfo = {
 }
 
 export type Cliente = {
-    idCliente?: number;
+    id?: number;
     nome: string;
     email: string;
     cpf: string;
@@ -24,7 +24,7 @@ export type Cliente = {
 }
 
 export type CentroAutomotivo = {
-    idOficina?: number;
+    id?: number;
     nome: string;
     email: string;
     cnpj: string;
