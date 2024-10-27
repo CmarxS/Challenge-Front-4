@@ -4,7 +4,6 @@ import Formulario from "../../../components/formulario/formulario";
 import Input from "../../../components/input/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 const CadastroCA = () => {
 
