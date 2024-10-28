@@ -2,6 +2,7 @@
 import "./orcamentos.scss";
 import { useState } from "react";
 import Link from "next/link";
+import Input from "@/components/input/input";
 const Orcamentos = () => {
 
     const [orcamento, setOrcamento] = useState<boolean>(false);
@@ -25,11 +26,11 @@ const Orcamentos = () => {
             <h1>Orçamentos</h1>
             <main className="container-orcamentos">
                 <div className="container-input-orcamento">
-                    <input type="text" placeholder="Digite o problema do seu veículo" id="orc-input" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    <Input type="text" placeholder="Digite o problema do seu veículo" name="problema" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                     <button onClick={() => { gerarOrcamento(); }}>Gerar</button>
                 </div>
                 <div className={`resultado-orcamento ${orcamento ? 'show' : ''}`}>
-                    <p>Após a avaliação do seu veículo, identificamos a necessidade de realizar a troca da {inputValue}. Essa manutenção é essencial para garantir a segurança e o bom funcionamento do seu carro. <br /><br />
+                    <div>Após a avaliação do seu veículo, identificamos a necessidade de realizar a troca da {inputValue}. Essa manutenção é essencial para garantir a segurança e o bom funcionamento do seu carro. <br /><br />
                         <strong>Descrição do Serviço:</strong>
                         <br />
                         <ul>
@@ -47,7 +48,7 @@ const Orcamentos = () => {
                         <br />
                         Atenciosamente,<br />
                         <span>[SolucIonA]</span>
-                    </p>
+                    </div>
                 </div>
             </main>
         </>

@@ -18,21 +18,21 @@ const Menu = () => {
     return (
         <>
             <div className="container-cards-menu">
-                <Link href="/site/infosCliente">
-                    <Cards imagem={Clientes.src} texto="Clientes" />
+                <Link href="/site/infosClientes">
+                    <Cards imagem={Clientes.src} texto="Clientes" width={70} height={70}/>
                 </Link>
                 <Link href="/site/infosCarro">
-                    <Cards imagem={Carro.src} texto="Meu veículo" />
+                    <Cards imagem={Carro.src} texto="Meu veículo" width={70} height={70}/>
                 </Link>
                 <Link href="/site/oficinasProximas">
-                    <Cards imagem={Oficinas.src} texto="Oficinas" />
+                    <Cards imagem={Oficinas.src} texto="Oficinas" width={70} height={70}/>
                 </Link>
-                <Cards imagem={Relatorio.src} texto="Relatório" onClick={HandleRelatorio} />
+                <Cards imagem={Relatorio.src} texto="Relatório" onClick={HandleRelatorio} width={70} height={70}/>
                 <Link href="/site/orcamentos">
-                    <Cards imagem={Orcamentos.src} texto="Orçamentos" />
+                    <Cards imagem={Orcamentos.src} texto="Orçamentos" width={70} height={70}/>
                 </Link>
                 <Link href="/site/chatIA">
-                    <Cards imagem={ChatBot.src} texto="Chatbot" cor="azul" />
+                    <Cards imagem={ChatBot.src} texto="Chatbot" cor="azul" width={70} height={70}/>
                 </Link>
             </div>
         </>

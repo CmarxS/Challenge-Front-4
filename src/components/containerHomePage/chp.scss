@@ -15,15 +15,14 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 10px; /* Espaçamento entre as linhas */
+    margin-bottom: 10px; 
 }
 
 .col {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* Espaçamento interno das colunas */
+    padding: 10px; 
 }
 .container-mobile{
     display: none;
@@ -40,8 +39,6 @@
         min-height: 70vh;
         .img-porto{
             margin: auto;
-            width: 90%;
-            height: auto;
             border-radius: 20pxh;
         }
         h1{

@@ -1,4 +1,4 @@
-.container-infos-cliente{
+.container-infos-cliente {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -14,24 +14,28 @@
     position: relative;
     padding: 20px;
     padding-top: 40px;
-    h3{
+
+    h3 {
         font-style: italic;
     }
 }
-.button-delete{
+
+.button-delete {
     background-color: red;
     border: red 2px solid;
     color: white;
     cursor: pointer;
 }
-.infos-cliente-input{
+
+.infos-cliente-input {
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    input{
+
+    input {
         width: 20%;
         height: 50px;
         border: var(--azul-porto) 2px solid;
@@ -39,6 +43,7 @@
         align-self: center;
     }
 }
+
 .container-dados-pessoais {
     display: flex;
     flex-direction: column;
@@ -46,22 +51,26 @@
     width: 100%;
     justify-items: center;
 }
-.linha-dados{
+
+.linha-dados {
     display: flex;
     flex-direction: row;
     width: 100%;
     margin: auto
 }
-.infos{
+
+.infos {
     border: var(--azul-porto) 2px solid;
     border-radius: 10px;
     width: 100%;
 }
-.container-button{
+
+.container-button {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    button{
+
+    button {
         color: white;
         cursor: pointer;
     }
@@ -70,44 +79,39 @@
 
 
 @media (max-width:1200px) {
-    .container-infos-cliente{
+    .container-infos-cliente {
         min-height: min-content;
     }
-    
+
 }
-@media (max-width: 768px){
-    .container-infos-cliente{
+
+@media (max-width: 768px) {
+    .container-infos-cliente {
         width: 80%;
-        min-height: 100vh;
         margin-bottom: 100px;
         border: none;
     }
-    .container-dados-pessoais{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        justify-items: center;
-    }
-    .linha-dados{
+
+    .linha-dados {
         display: flex;
         flex-direction: column;
         width: 100%;
         margin: auto
     }
-    .infos{
-        border: var(--azul-porto) 2px solid;
-        border-radius: 10px;
-        width: 85%;
-    }
-    .container-button{
-        display: flex;
+
+    .infos-cliente-input {
+        flex-direction: column;
         justify-content: center;
-        margin-top: 20px;
-        button{
-            color: white;
-            cursor: pointer;
+        margin-bottom: 10px;
+
+        input {
+            width: 55%;
+        }
+        button {
+            font-size: 0.8rem;
+            width: 55%;
+            font-size: 15px;
+            margin: 7px;
         }
     }
-    
 }

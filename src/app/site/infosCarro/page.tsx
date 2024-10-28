@@ -212,7 +212,7 @@ const InfosCarros = () => {
                 )}
                 <Link href="/site/cadastroVeiculo">
                         <button type='button' className="btn-adiciona">Cadastrar novo veículo</button>
-                    </Link>
+                </Link>
             </main>
         </>
     );

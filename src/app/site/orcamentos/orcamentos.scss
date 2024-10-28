@@ -17,7 +17,7 @@
 .container-orcamentos{
     @include coluna;
     width: 100%;
-    min-height: 80vh;
+    min-height: 90vh;
     justify-content: flex-start;
 }
 .container-input-orcamento{
@@ -26,6 +26,7 @@
         width:50%;
         padding: 7px;
         padding-left: 18px;
+        height: 45px;
         @include borda;
         margin: 0;
         background-color: #e9e9e9;
@@ -50,7 +51,7 @@
     @include borda;
     width: 80%;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 3%;
     height: auto;
     padding: 20px;
     display: none;
@@ -81,7 +82,7 @@
             width: 70%;
         }
         button{
-            width: 20%;
+            width: 25%;
         }
     }
     .resultado-orcamento{

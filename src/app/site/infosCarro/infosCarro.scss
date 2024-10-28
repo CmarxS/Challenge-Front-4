@@ -1,68 +1,101 @@
-.container-infos-carro{
+.container-infos-carro {
     display: flex;
-    margin: auto;;
-    width: 100%;
+    margin: auto;
+    width: 80%;
     height: auto;
     min-height: 80vh;
     flex-direction: column;
     align-items: center;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
-    overflow: hidden; 
+    overflow: hidden;
 }
-th, td{
+
+th,
+td {
     border: var(--azul-porto) 2px solid;
     padding: 10px;
     text-align: start;
     overflow: hidden;
 }
-th{
+
+th {
     background-color: var(--azul-porto);
     color: white;
 }
-.btn-delete{
+
+.btn-delete {
     background-color: red;
     border: red 2px solid;
 }
-.btn-adiciona, .btn-delete, .btn-update, .btn-cadastra{
+
+.btn-adiciona,
+.btn-delete,
+.btn-update {
     display: flex;
     justify-content: center;
 }
-.infos-carro-input{
+
+.infos-carro-input {
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 1%;
-    input{
+
+    input {
         height: 50px;
-        width: 15%;
+        width: 20%;
     }
-    button{
+
+    button {
         height: 50px;
         margin: 7px;
     }
 }
-.container-dados{
+
+.container-dados {
     border: var(--azul-porto) 2px solid;
     padding: 50px;
     margin: 2%;
     border-radius: 10px;
 }
-.buttons{   
+
+.buttons {
     display: flex;
     justify-content: center;
     gap: 1%;
     width: 50%;
     margin-top: 2%;
 }
+
 @media (max-width: 768px) {
-    .infos-carro-input{
+    .infos-carro-input {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 80%;
         gap: 1%;
+
+        input {
+            height: 50px;
+            width: 55%;
+        }
+        button {
+            font-size: 0.8rem;
+            width: 55%;
+            font-size: 15px;
+            margin: 7px;
+        }
     }
-    
+    .btn-adiciona{
+        font-size: 0.8rem;
+        width: 92%;
+        font-size: 15px;
+        margin: 7px;
+    }
+
 }

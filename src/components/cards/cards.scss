@@ -12,7 +12,6 @@
 
     img {
         padding: 10px;
-        width: 40%;
         height: auto;
     }
 
@@ -38,14 +37,13 @@
 
 @media (max-width: 768px) {
     .card {
-        width: 95%;
+        width: 100px;
         height: auto;
         flex-direction: column;
         margin: auto;
         margin-top: 4%;
 
         img {
-            width: 13%;
             height: auto;
         }
 
