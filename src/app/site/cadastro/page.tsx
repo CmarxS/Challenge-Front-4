@@ -30,7 +30,7 @@ const Cadastro = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/clientes', {
+            const response = await fetch('http://localhost:8080/cliente', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

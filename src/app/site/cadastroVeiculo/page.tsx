@@ -28,7 +28,7 @@ const CadastroVeiculo = () => {
     const handleSubmit = async (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/veiculos', {
+            const response = await fetch('http://localhost:8080/veiculo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const CadastroVeiculo = () => {
                     type="text"
                     name="placa"
                     placeholder="Digite a placa do seu carro"
-                    pattern="([A-Z]{3}-\d{4}|[A-Z]{3}\d[A-Z]\d{2})"
+                    pattern="^[A-Z]{3}-\d{4}$|^[A-Z]{3}\d[A-Z]\d{2}$"
                     onChange={(evento) => handleChange(evento)}
                     value={carro.placa}
                 />

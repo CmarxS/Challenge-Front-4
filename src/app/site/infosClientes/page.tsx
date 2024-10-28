@@ -16,7 +16,7 @@ const defaultClienteData: Cliente = {
 
 const fetchClienteData = async (idCliente: number) => {
     try {
-        const url = `http://localhost:3001/clientes/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${idCliente}`;
         console.log(`Fetching data from URL: ${url}`);
         const response = await fetch(url);
         if (!response.ok) {
@@ -33,7 +33,7 @@ const fetchClienteData = async (idCliente: number) => {
 
 const deleteClienteData = async (idCliente: number) => {
     try {
-        const url = `http://localhost:3001/clientes/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${idCliente}`;
         console.log(`Deleting data from URL: ${url}`);
         const response = await fetch(url, {
             method: 'DELETE',
@@ -51,7 +51,7 @@ const deleteClienteData = async (idCliente: number) => {
 
 const updateClienteData = async (idCliente: number, clienteData: Cliente) => {
     try {
-        const url = `http://localhost:3001/clientes/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${idCliente}`;
         console.log(`Updating data at URL: ${url}`);
         const response = await fetch(url, {
             method: 'PUT',

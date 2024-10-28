@@ -16,7 +16,7 @@ const defaultOficinaData: CentroAutomotivo = {
 
 const fetchOficinaData = async (idOficina: number) => {
     try {
-        const url = `http://localhost:3001/oficinas/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${idOficina}`;
         console.log(`Fetching data from URL: ${url}`);
         const response = await fetch(url);
         if (!response.ok) {
@@ -33,7 +33,7 @@ const fetchOficinaData = async (idOficina: number) => {
 
 const deleteOficinaData = async (idOficina: number) => {
     try {
-        const url = `http://localhost:3001/oficinas/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${idOficina}`;
         console.log(`Deleting data from URL: ${url}`);
         const response = await fetch(url, {
             method: 'DELETE',
@@ -51,7 +51,7 @@ const deleteOficinaData = async (idOficina: number) => {
 
 const updateOficinaData = async (idOficina: number, oficinaData: CentroAutomotivo) => {
     try {
-        const url = `http://localhost:3001/oficinas/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${idOficina}`;
         console.log(`Updating data at URL: ${url}`);
         const response = await fetch(url, {
             method: 'PUT',
