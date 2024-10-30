@@ -4,6 +4,7 @@ import Link from 'next/link';
 import './infosCarro.scss';
 import Input from "@/components/input/input";
 import { CarrosInfo } from "@/app/types/types";
+import { useRouter } from 'next/navigation';
 
 const fetchVeiculoData = async (placa: string) => {
     try {
@@ -67,6 +68,7 @@ const InfosCarros = () => {
     const [placa, setPlacaVeiculo] = useState<string | null>(null);
     const [carroSelecionado, setCarroSelecionado] = useState<CarrosInfo | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const navigation = useRouter();
 
     const handleFetchVeiculo = async () => {
         if (placa !== null) {
@@ -89,6 +91,8 @@ const InfosCarros = () => {
             if (success) {
                 setCarroSelecionado(null);
                 setErrorMessage('Veículo deletado com sucesso');
+                alert('Veículo atualizado com sucesso');
+                navigation.push('/site/inicial');
             } else {
                 setErrorMessage('Erro ao deletar veículo');
             }
@@ -135,9 +139,8 @@ const InfosCarros = () => {
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                 {carroSelecionado && (
                     <div className="container-dados">
-                        <h3>Dados do Veículo</h3>
                         <div className="linha-dados">
-                            <label htmlFor="idVeiculo">ID do veiculo</label>
+                            <label htmlFor="idVeiculo">ID do veiculo</label><br />
                             <input
                                 className='infos'
                                 type="number"
@@ -149,7 +152,7 @@ const InfosCarros = () => {
                             />
                         </div>
                         <div className="linha-dados">
-                            <label htmlFor="modelo">Modelo</label>
+                            <label htmlFor="modelo">Modelo</label><br />
                             <input
                                 className='infos'
                                 type="text"
@@ -161,7 +164,7 @@ const InfosCarros = () => {
                             />
                         </div>
                         <div className="linha-dados">
-                            <label htmlFor="marca">Marca</label>
+                            <label htmlFor="marca">Marca</label><br />
                             <input
                                 className='infos'
                                 type="text"
@@ -173,7 +176,7 @@ const InfosCarros = () => {
                             />
                         </div>
                         <div className="linha-dados">
-                            <label htmlFor="ano">Ano do carro</label>
+                            <label htmlFor="ano">Ano do carro</label><br />
                             <input
                                 className='infos'
                                 type="text"
@@ -185,7 +188,7 @@ const InfosCarros = () => {
                             />
                         </div>
                         <div className="linha-dados">
-                            <label htmlFor="placa">Placa</label>
+                            <label htmlFor="placa">Placa</label><br />
                             <input
                                 className='infos'
                                 type="text"
@@ -197,7 +200,7 @@ const InfosCarros = () => {
                             />
                         </div>
                         <div className="linha-dados">
-                            <label htmlFor="idCliente">ID do cliente</label>
+                            <label htmlFor="idCliente">ID do cliente</label><br />
                             <input
                                 className='infos'
                                 type="number"

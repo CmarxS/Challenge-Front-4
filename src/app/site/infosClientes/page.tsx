@@ -4,6 +4,7 @@ import { useState } from "react";
 import './infosCliente.scss';
 import Input from "@/components/input/input";
 import { Cliente } from "@/app/types/types";
+import { useRouter } from "next/navigation";
 
 const defaultClienteData: Cliente = {
     nome: '',
@@ -14,9 +15,9 @@ const defaultClienteData: Cliente = {
     senha: ''
 };
 
-const fetchClienteData = async (idCliente: number) => {
+const fetchClienteData = async (email: string) => {
     try {
-        const url = `http://localhost:8080/cliente/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${email}`;
         console.log(`Fetching data from URL: ${url}`);
         const response = await fetch(url);
         if (!response.ok) {
@@ -31,9 +32,9 @@ const fetchClienteData = async (idCliente: number) => {
     }
 };
 
-const deleteClienteData = async (idCliente: number) => {
+const deleteClienteData = async (email: string) => {
     try {
-        const url = `http://localhost:8080/cliente/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${email}`;
         console.log(`Deleting data from URL: ${url}`);
         const response = await fetch(url, {
             method: 'DELETE',
@@ -49,9 +50,9 @@ const deleteClienteData = async (idCliente: number) => {
     }
 };
 
-const updateClienteData = async (idCliente: number, clienteData: Cliente) => {
+const updateClienteData = async (email: string, clienteData: Cliente) => {
     try {
-        const url = `http://localhost:8080/cliente/${idCliente}`;
+        const url = `http://localhost:8080/cliente/${email}`;
         console.log(`Updating data at URL: ${url}`);
         const response = await fetch(url, {
             method: 'PUT',
@@ -74,13 +75,14 @@ const updateClienteData = async (idCliente: number, clienteData: Cliente) => {
 
 const InfosClientes = () => {
     const [clienteData, setClienteData] = useState<Cliente>(defaultClienteData);
-    const [idCliente, setIdCliente] = useState<number | null>(null);
+    const [email, setEmail] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const navigation = useRouter();
 
     const handleFetchCliente = async () => {
-        if (idCliente !== null) {
-            console.log(`Fetching client with ID: ${idCliente}`);
-            const data = await fetchClienteData(idCliente);
+        if (email !== null) {
+            console.log(`Fetching client with ID: ${email}`);
+            const data = await fetchClienteData(email);
             if (data) {
                 setClienteData(data);
                 setErrorMessage(null);
@@ -92,12 +94,14 @@ const InfosClientes = () => {
     };
 
     const handleDeleteCliente = async () => {
-        if (idCliente !== null) {
-            console.log(`Deleting client with ID: ${idCliente}`);
-            const success = await deleteClienteData(idCliente);
+        if (email !== null) {
+            console.log(`Deleting client with ID: ${email}`);
+            const success = await deleteClienteData(email);
             if (success) {
                 setClienteData(defaultClienteData);
                 setErrorMessage('Cliente deletado com sucesso');
+                alert('Cliente deletado com sucesso');
+                navigation.push('/site/inicial');
             } else {
                 setErrorMessage('Erro ao deletar cliente');
             }
@@ -105,9 +109,9 @@ const InfosClientes = () => {
     };
 
     const handleUpdateCliente = async () => {
-        if (idCliente !== null) {
-            console.log(`Updating client with ID: ${idCliente}`);
-            const data = await updateClienteData(idCliente, clienteData);
+        if (email !== null) {
+            console.log(`Updating client with ID: ${email}`);
+            const data = await updateClienteData(email, clienteData);
             if (data) {
                 setClienteData(data);
                 setErrorMessage('Cliente atualizado com sucesso');
@@ -131,10 +135,10 @@ const InfosClientes = () => {
             <main className="container-infos-cliente">
                 <div className="infos-cliente-input">
                     <Input 
-                        type="number" 
-                        placeholder="Digite o seu Id" 
-                        name="idCliente" 
-                        onChange={(e) => setIdCliente(Number(e.target.value))} 
+                        type="text" 
+                        placeholder="Digite o seu email" 
+                        name="email" 
+                        onChange={(e) => setEmail((e.target.value))} 
                     />
                     <button type='button' onClick={handleFetchCliente}>Buscar cliente</button>
                     <button type='button' onClick={handleUpdateCliente} className="button-update">Atualizar cliente</button>
@@ -147,7 +151,7 @@ const InfosClientes = () => {
                         <input 
                             className='infos' 
                             type="text" 
-                            name="nome" 
+                            name="nome"
                             placeholder="Nome" 
                             value={clienteData.nome} 
                             onChange={handleInputChange} 

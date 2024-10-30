@@ -5,6 +5,7 @@ import './infosOficinas.scss';
 import Input from "@/components/input/input";
 import Link from "next/link";
 import { CentroAutomotivo } from "@/app/types/types";
+import { useRouter } from "next/navigation";
 
 const defaultOficinaData: CentroAutomotivo = {
     nome: '',
@@ -14,9 +15,9 @@ const defaultOficinaData: CentroAutomotivo = {
     email: '',
 };
 
-const fetchOficinaData = async (idOficina: number) => {
+const fetchOficinaData = async (email: string) => {
     try {
-        const url = `http://localhost:8080/oficina/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${email}`;
         console.log(`Fetching data from URL: ${url}`);
         const response = await fetch(url);
         if (!response.ok) {
@@ -31,9 +32,9 @@ const fetchOficinaData = async (idOficina: number) => {
     }
 };
 
-const deleteOficinaData = async (idOficina: number) => {
+const deleteOficinaData = async (email: string) => {
     try {
-        const url = `http://localhost:8080/oficina/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${email}`;
         console.log(`Deleting data from URL: ${url}`);
         const response = await fetch(url, {
             method: 'DELETE',
@@ -49,9 +50,9 @@ const deleteOficinaData = async (idOficina: number) => {
     }
 };
 
-const updateOficinaData = async (idOficina: number, oficinaData: CentroAutomotivo) => {
+const updateOficinaData = async (email: string, oficinaData: CentroAutomotivo) => {
     try {
-        const url = `http://localhost:8080/oficina/${idOficina}`;
+        const url = `http://localhost:8080/oficina/${email}`;
         console.log(`Updating data at URL: ${url}`);
         const response = await fetch(url, {
             method: 'PUT',
@@ -74,13 +75,14 @@ const updateOficinaData = async (idOficina: number, oficinaData: CentroAutomotiv
 
 const InfosOficinas = () => {
     const [oficinaData, setOficinaData] = useState<CentroAutomotivo>(defaultOficinaData);
-    const [idOficina, setIdOficina] = useState<number | null>(null);
+    const [email, setEmail] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const navigation = useRouter();
 
     const handleFetchOficina = async () => {
-        if (idOficina !== null) {
-            console.log(`Fetching oficina with ID: ${idOficina}`);
-            const data = await fetchOficinaData(idOficina);
+        if (email !== null) {
+            console.log(`Fetching oficina with ID: ${email}`);
+            const data = await fetchOficinaData(email);
             if (data) {
                 setOficinaData(data);
                 setErrorMessage(null);
@@ -92,12 +94,14 @@ const InfosOficinas = () => {
     };
 
     const handleDeleteOficina = async () => {
-        if (idOficina !== null) {
-            console.log(`Deleting oficina with ID: ${idOficina}`);
-            const success = await deleteOficinaData(idOficina);
+        if (email !== null) {
+            console.log(`Deleting oficina with email: ${email}`);
+            const success = await deleteOficinaData(email);
             if (success) {
                 setOficinaData(defaultOficinaData);
                 setErrorMessage('Oficina deletada com sucesso');
+                alert('Oficina deletada com sucesso');
+                navigation.push('/site/inicial');
             } else {
                 setErrorMessage('Erro ao deletar oficina');
             }
@@ -105,9 +109,9 @@ const InfosOficinas = () => {
     };
 
     const handleUpdateOficina = async () => {
-        if (idOficina !== null) {
-            console.log(`Updating oficina with ID: ${idOficina}`);
-            const data = await updateOficinaData(idOficina, oficinaData);
+        if (email !== null) {
+            console.log(`Updating oficina with email: ${email}`);
+            const data = await updateOficinaData(email, oficinaData);
             if (data) {
                 setOficinaData(data);
                 setErrorMessage('Oficina atualizada com sucesso');
@@ -131,10 +135,10 @@ const InfosOficinas = () => {
             <main className="container-infos-oficina">
                 <div className="infos-oficina-input">
                     <Input 
-                        type="number" 
-                        placeholder="Digite o ID da oficina" 
-                        name="idOficina" 
-                        onChange={(e) => setIdOficina(Number(e.target.value))} 
+                        type="text" 
+                        placeholder="Digite o email da oficina" 
+                        name="email" 
+                        onChange={(e) => setEmail((e.target.value))} 
                     />
                     <button type='button' onClick={handleFetchOficina}>Buscar oficina</button>
                     <button type='button' onClick={handleUpdateOficina} className="button-update">Atualizar oficina</button>
