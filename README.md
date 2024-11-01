@@ -8,6 +8,6 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
   - O usuário acessa as informações entrando na respectiva área. As informações do perfil são exibidas de acordo com os dados fornecidos no cadastro. 
   - As informações do veículo aparecem de acordo com o ID do veículo, utilizando uma **API em Java** para criar, atualizar, visualizar e deletar veículos.
   - As informações das oficinas também são gerenciadas por uma API em Java.
-  - - **Acessar a IA de diagnóstico e orçamento**: 
+- **Acessar a IA de diagnóstico e orçamento**:  
 
 
