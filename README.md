@@ -4,3 +4,9 @@ O **SolucIonA** é um protótipo de site desenvolvido em **Next.js**, que simula
 ## Funcionalidades do Site
 O site contém informações dos veículos registrados, dos usuários e das oficinas. Para acessar essas funcionalidades, o usuário precisa primeiro se cadastrar e fazer login. Após o login, ele é redirecionado para a tela inicial, onde pode:
 
+- **Consultar as informações dos veículos, do perfil e das oficinas**: 
+  - O usuário acessa as informações entrando na respectiva área. As informações do perfil são exibidas de acordo com os dados fornecidos no cadastro. 
+  - As informações do veículo aparecem de acordo com o ID do veículo, utilizando uma **API em Java** para criar, atualizar, visualizar e deletar veículos.
+  - As informações das oficinas também são gerenciadas por uma API em Java.
+
+
