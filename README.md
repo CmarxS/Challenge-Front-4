@@ -9,7 +9,7 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
   - As informações do veículo aparecem de acordo com o ID do veículo, utilizando uma **API em Java** para criar, atualizar, visualizar e deletar veículos.
   - As informações das oficinas também são gerenciadas por uma API em Java.
 - **Acessar a IA de diagnóstico e orçamento**:
- - A IA, exclusiva dos clientes **Porto**, ajuda a interpretar o relatório gerado pelo Scanner OBD e, a partir dele, gerar um orçamento. Além disso, responde a questões sobre o carro, como: "Como faço para limpar o vidro de trás do meu veículo?" ou "Como abrir a portinha da gasolina em meu carro?" *(funcionalidade desenvolvida apenas na aparência)*.
+  - A IA, exclusiva dos clientes **Porto**, ajuda a interpretar o relatório gerado pelo Scanner OBD e, a partir dele, gerar um orçamento. Além disso, responde a questões sobre o carro, como: "Como faço para limpar o vidro de trás do meu veículo?" ou "Como abrir a portinha da gasolina em meu carro?" *(funcionalidade desenvolvida apenas na aparência)*.
  
 
 
