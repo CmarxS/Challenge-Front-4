@@ -39,6 +39,11 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 
 ## Turma
 **1TDSR**
+## Links
+- [Youtube - Link do vídeo]()
+- [Github - Repositório no Github]()
+- [Figma - Design no Figma]()
+
 
 
 
