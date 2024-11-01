@@ -24,6 +24,15 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 - **Veículos**: Endpoints para criar, atualizar, visualizar e deletar veículos.
 - **Clientes**: Endpoints para criar, atualizar, visualizar e deletar clientes.
 - **Oficinas**: Endpoints para criar, atualizar, visualizar e deletar oficinas.
+### API em Python (Flask)
+- **Autenticação**: Endpoint para autenticar o usuário.
+
+## Como rodar o projeto
+1. Necessário ter a versão `20.15.1` do **NodeJS**
+2. Necessário ter a versão `10.7.0` do **Node Package Manager (NPM)**
+3. Rodar o comando `npm install`
+4. Rodar o comando `npm run dev`
+
 
 
  
