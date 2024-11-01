@@ -18,6 +18,13 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 
 - **Gerar um orçamento personalizado ao descrever problemas no veículo**: 
   - Baseado na descrição fornecida pelo cliente e no banco de dados, um orçamento é gerado com base no problema descrito (a IA é exclusiva para clientes Porto).
+## APIs Utilizadas
+
+### API em Java
+- **Veículos**: Endpoints para criar, atualizar, visualizar e deletar veículos.
+- **Clientes**: Endpoints para criar, atualizar, visualizar e deletar clientes.
+- **Oficinas**: Endpoints para criar, atualizar, visualizar e deletar oficinas.
+
 
  
 
