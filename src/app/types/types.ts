@@ -31,3 +31,8 @@ export type CentroAutomotivo = {
     telefone: string;
     endereco: string;
 }
+
+export type LoginType = {
+    email: string;
+    senha: string;
+}
