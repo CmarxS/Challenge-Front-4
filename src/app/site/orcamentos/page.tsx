@@ -9,13 +9,11 @@ const Orcamentos = () => {
     const [inputValue, setInputValue] = useState<string>('');
 
     const gerarOrcamento = () => {
-        const input = document.getElementById('orc-input') as HTMLInputElement;
-        if (input.value === '') {
+        if (inputValue.trim() === '') {
             alert('Digite o problema do seu veículo');
         }
         else {
             setOrcamento(true);
-            input.disabled = true;
         }
     }
 
