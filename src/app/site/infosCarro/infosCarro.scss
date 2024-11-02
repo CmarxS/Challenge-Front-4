@@ -70,6 +70,9 @@ th {
     width: 50%;
     margin-top: 2%;
 }
+.infos{
+    width: 300px;
+}
 
 @media (max-width: 768px) {
     .infos-carro-input {
@@ -97,5 +100,10 @@ th {
         font-size: 15px;
         margin: 7px;
     }
-
+    .infos{
+        width: 150px;
+    }
+    .container-infos-carro{
+        min-height: 110vh;
+    }
 }
