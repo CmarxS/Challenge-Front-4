@@ -24,7 +24,7 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 - **Veículos**: Endpoints para criar, atualizar, visualizar e deletar veículos.
 - **Clientes**: Endpoints para criar, atualizar, visualizar e deletar clientes.
 - **Oficinas**: Endpoints para criar, atualizar, visualizar e deletar oficinas.
-- - [Github - Repositório CRUD API ]('DEPOIS COLA O LINK AQUI')
+- [Github - Repositório CRUD API ](https://github.com/camargo1605/Sprint-Java4)
 ### API em Python (Flask)
 - **Autenticação**: Endpoint para autenticar o usuário.
 - [Github - Repositório Autenticação API ](https://github.com/CmarxS/Python-Challenge)
