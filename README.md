@@ -24,8 +24,10 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 - **Veículos**: Endpoints para criar, atualizar, visualizar e deletar veículos.
 - **Clientes**: Endpoints para criar, atualizar, visualizar e deletar clientes.
 - **Oficinas**: Endpoints para criar, atualizar, visualizar e deletar oficinas.
+- - [Github - Repositório CRUD API ]('DEPOIS COLA O LINK AQUI')
 ### API em Python (Flask)
 - **Autenticação**: Endpoint para autenticar o usuário.
+- [Github - Repositório Autenticação API ](https://github.com/CmarxS/Python-Challenge)
 
 ## Como rodar o projeto
 1. Necessário ter a versão `20.15.1` do **NodeJS**
@@ -40,14 +42,7 @@ O site contém informações dos veículos registrados, dos usuários e das ofic
 ## Turma
 **1TDSR**
 ## Links
-- [Youtube - Link do vídeo]()
-- [Github - Repositório no Github]()
-- [Figma - Design no Figma]()
-
-
-
-
-
- 
-
-
+- [Youtube - Link do vídeo de demonstração](https://youtu.be/NwFnjNWM6ik)
+- [Youtube - Link do vídeo dos status das API's](https://youtu.be/K23WL8my0IE)
+- [Github - Repositório no Github](https://github.com/CmarxS/Challenge-Front4)
+- [Deploy na Vercel](https://challenge-front-4.vercel.app/)
